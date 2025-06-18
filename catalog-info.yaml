@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: o4gef4mqi-python-gitops
+  description: This is GitOps manifest for o4gef4mqi-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=o4gef4mqi-python
+    backstage.io/kubernetes-id: o4gef4mqi-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: o4gef4mqi-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:o4gef4mqi-python
